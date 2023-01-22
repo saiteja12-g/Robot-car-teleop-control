@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="botcar2">
+  
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  
+  <link
+    name="carbody_base_link">
+  </link>
+  
+  <joint
+    name="base_to_carbody_joint"
+    type="fixed">
+    <parent
+      link="carbody_base_link"  />
+    <child
+      link="carbody_link"  />>
+  </joint>
+  
+  <link
+    name="carbody_link">
+    <inertial>
+      <origin
+        xyz="-0.33507 -0.0031184 0.020174"
+        rpy="0 0 0" />
+      <mass
+        value="30.054" />
+      <inertia
+        ixx="0.38386"
+        ixy="0.015558"
+        ixz="-0.11884"
+        iyy="1.8292"
+        iyz="-0.00072519"
+        izz="1.9992" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/carbody_link.STL" />
+      </geometry>
+      <material
+        name="red">
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/carbody_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="stubL_link">
+    <inertial>
+      <origin
+        xyz="0.060775 0.013565 1.7938E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.27873" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0.00058841"
+        iyz="0"
+        izz="0.00060561" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/stubL_link.STL" />
+      </geometry>
+      <material
+        name="black">
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/stubL_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stubL_joint"
+    type="revolute">
+    <origin
+      xyz="-0.67625 0 -0.12679"
+      rpy="3.1416 1.3581 0" />
+    <parent
+      link="carbody_link" />
+    <child
+      link="stubL_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="wheelFL_link">
+    <inertial>
+      <origin
+        xyz="-5.5511E-17 1.1102E-16 0.034643"
+        rpy="0 0 0" />
+      <mass
+        value="2.6707" />
+      <inertia
+        ixx="0.0085536"
+        ixy="0"
+        ixz="0"
+        iyy="0.0085633"
+        iyz="0"
+        izz="0.014556" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/wheelFL_link.STL" />
+      </geometry>
+      <material
+        name="white">
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/wheelFL_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelFL_joint"
+    type="continuous">
+    <origin
+      xyz="0.060657 0.014439 0"
+      rpy="-1.5708 -0.64241 -1.5708" />
+    <parent
+      link="stubL_link" />
+    <child
+      link="wheelFL_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="stubR_link">
+    <inertial>
+      <origin
+        xyz="0.060775 0.013565 1.7438E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.27873" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0.00058841"
+        iyz="0"
+        izz="0.00060561" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/stubR_link.STL" />
+      </geometry>
+      <material
+        name="black">
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/stubR_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stubR_joint"
+    type="revolute">
+    <origin
+      xyz="-0.67625 0 0.12679"
+      rpy="0 -1.4018 3.1416" />
+    <parent
+      link="carbody_link" />
+    <child
+      link="stubR_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="wheelFR_link">
+    <inertial>
+      <origin
+        xyz="0 1.1102E-16 0.035923"
+        rpy="0 0 0" />
+      <mass
+        value="2.6707" />
+      <inertia
+        ixx="0.0085536"
+        ixy="0"
+        ixz="0"
+        iyy="0.0085633"
+        iyz="0"
+        izz="0.014556" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/wheelFR_link.STL" />
+      </geometry>
+      <material
+        name="white">
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/wheelFR_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelFR_joint"
+    type="continuous">
+    <origin
+      xyz="0.059377 0.014439 0"
+      rpy="1.5708 0.64981 1.5708" />
+    <parent
+      link="stubR_link" />
+    <child
+      link="wheelFR_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheelRR_link">
+    <inertial>
+      <origin
+        xyz="-6.9389E-18 0 0.03815"
+        rpy="0 0 0" />
+      <mass
+        value="2.6707" />
+      <inertia
+        ixx="0.0085536"
+        ixy="0"
+        ixz="0"
+        iyy="0.0085633"
+        iyz="0"
+        izz="0.014556" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/wheelRR_link.STL" />
+      </geometry>
+      <material
+        name="white">
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/wheelRR_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelRR_joint"
+    type="continuous">
+    <origin
+      xyz="-0.16858 -0.014439 0.1778"
+      rpy="0 0 1.9221" />
+    <parent
+      link="carbody_link" />
+    <child
+      link="wheelRR_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheelRL_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.03815"
+        rpy="0 0 0" />
+      <mass
+        value="2.6707" />
+      <inertia
+        ixx="0.0085536"
+        ixy="0"
+        ixz="0"
+        iyy="0.0085633"
+        iyz="0"
+        izz="0.014556" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/wheelRL_link.STL" />
+      </geometry>
+      <material
+        name="white">
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://botcar2/meshes/wheelRL_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelRL_joint"
+    type="continuous">
+    <origin
+      xyz="-0.16858 -0.014439 -0.1778"
+      rpy="-3.1416 0 2.7121" />
+    <parent
+      link="carbody_link" />
+    <child
+      link="wheelRL_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  
+  <gazebo reference="carbody_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="stubL_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="stubR_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="wheelFR_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="wheelFL_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="wheelRR_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="wheelRL_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  
+  <transmission name="steerR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="stubR_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="steerR_motor">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  
+  <transmission name="steerL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="stubL_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="steerL_motor">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  
+  <transmission name="wheelR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wheelRR_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="driveR_motor">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  
+  <transmission name="wheelL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wheelRL_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="driveL_motor">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+</robot>

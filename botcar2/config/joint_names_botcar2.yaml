@@ -1,0 +1,27 @@
+controller_joint_names: ['', 'stubL_joint', 'wheelFL_joint', 'stubR_joint', 'wheelFR_joint', 'wheelRR_joint', 'wheelRL_joint', ]
+carRobot2:
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Controller 1
+  steerR_controller:
+    type: position_controllers/JointPositionController
+    joint: stubR_joint
+    pid: {p: 10.0 , i: 0.0 , d: 10.0}
+    
+  steerL_controller:
+    type: position_controllers/JointPositionController
+    joint: stubL_joint
+    pid: {p: 10.0 , i: 0.0 , d: 10.0}
+    
+  driveR_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: wheelRR_joint
+    pid: {p: 10.0 , i: 0.0 , d: 10.0}
+    
+  driveL_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: wheelRL_joint
+    pid: {p: 10.0 , i: 0.0 , d: 10.0}
